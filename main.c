@@ -13,6 +13,7 @@
 #include "ft_isalpha.c"
 #include "ft_isdigit.c"
 #include "ft_isalnum.c"
+#include "ft_isascii.c"
 
 int	main(void)
 {
@@ -37,5 +38,12 @@ int	main(void)
 	printf("ft_isalnum('`') %d\n", ft_isalnum('`'));
 	printf("ft_isalnum('[') %d\n", ft_isalnum('['));
 	printf("ft_isalnum('@') %d\n", ft_isalnum('@'));
+
+	printf("TEST ft_isascii(int c)\n");
+	printf("ft_isascii('9') %d\n", ft_isascii('9'));
+	printf("ft_isascii('0') %d\n", ft_isascii('0'));
+	printf("ft_isascii('a') %d\n", ft_isascii('a'));
+	printf("ft_isascii('z') %d\n", ft_isascii('z'));
+	printf("ft_isascii(129) %d\n", ft_isascii(129));
 	return (0);
 }
