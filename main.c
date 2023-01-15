@@ -15,6 +15,7 @@
 #include "ft_isalnum.c"
 #include "ft_isascii.c"
 #include "ft_isprint.c"
+#include "ft_memset.c"
 
 int	main(void)
 {
@@ -53,5 +54,9 @@ int	main(void)
 	printf("ft_isprint('a') %d\n", ft_isprint('a'));
 	printf("ft_isprint('z') %d\n", ft_isprint('z'));
 	printf("ft_isprint(1) %d\n", ft_isprint(1));
+
+	printf("TEST *memset(void *str, int c, size_t n)\n");
+	char *str = "ahojfsdfsfe";
+	printf("ft_memset(str, 'c', 3) %p\n", ft_memset(str, 'c', 3));
 	return (0);
 }
