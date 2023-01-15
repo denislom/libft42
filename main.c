@@ -14,6 +14,7 @@
 #include "ft_isdigit.c"
 #include "ft_isalnum.c"
 #include "ft_isascii.c"
+#include "ft_isprint.c"
 
 int	main(void)
 {
@@ -45,5 +46,12 @@ int	main(void)
 	printf("ft_isascii('a') %d\n", ft_isascii('a'));
 	printf("ft_isascii('z') %d\n", ft_isascii('z'));
 	printf("ft_isascii(129) %d\n", ft_isascii(129));
+
+	printf("TEST ft_isprint(int c)\n");
+	printf("ft_isprint('9') %d\n", ft_isprint('9'));
+	printf("ft_isprint('0') %d\n", ft_isprint('0'));
+	printf("ft_isprint('a') %d\n", ft_isprint('a'));
+	printf("ft_isprint('z') %d\n", ft_isprint('z'));
+	printf("ft_isprint(1) %d\n", ft_isprint(1));
 	return (0);
 }
