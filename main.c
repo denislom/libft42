@@ -56,7 +56,7 @@ int	main(void)
 	printf("ft_isprint(1) %d\n", ft_isprint(1));
 
 	printf("TEST *memset(void *str, int c, size_t n)\n");
-	char *str = "ahojfsdfsfe";
-	printf("ft_memset(str, 'c', 3) %p\n", ft_memset(str, 'c', 3));
+	char str[] = "ahojfsdfsfe";
+	printf("ft_memset(str, 'c', 3) %s\n", (char*)ft_memset(str, 'c', 3));
 	return (0);
 }
