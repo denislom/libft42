@@ -9,3 +9,10 @@
 /*   Updated: 2023/01/12 13:43:02 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+size_t	strlcat(char *dest, const char *src, size_t size)
+{
+	
+}

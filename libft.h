@@ -23,6 +23,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_strlen(char	*str);
+size_t	strlcat(char *dest, const char *src, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 
 #endif
