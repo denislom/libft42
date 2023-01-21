@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 15:24:58 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/21 09:34:23 by dlom             ###   ########.fr       */
+/*   Created: 2023/01/21 09:06:56 by dlom              #+#    #+#             */
+/*   Updated: 2023/01/21 09:39:08 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
 
-int		ft_isalnum(int a);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_strlen(char	*str);
-size_t	strlcat(char *dest, const char *src, size_t size);
-void	*ft_memset(void *s, int c, size_t n);
-void	bzero(void *s, size_t n);
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = '\0';
+		i++;
+	}
+}
 
-#endif
+// void	ft_bzero(void *s, size_t n)
+// {
+// 	ft_memset(s, 0, n);
+// }
