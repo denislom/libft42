@@ -11,6 +11,7 @@ SOURCE	=	ft_isalnum.c\
 			ft_bzero.c\
 			ft_memcpy.c\
 			ft_memmove.c\
+			ft_strlcat.c\
 
 OBJECTS	=	$(SOURCE:.c=.o)
 
