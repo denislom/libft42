@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:39:06 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/21 13:56:01 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/21 14:11:36 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	t_dest = dest;
 	t_src = src;
-	if (d == s)
+	if (t_dest == t_src)
 		return (dest);
 	else if (t_dest < t_src)
 	{
 		while (n--)
 		{
-			t_dest[i] = t_src[i];
-			i++;
+			*t_dest++ = *t_src++;
 		}
 	}
 	else
