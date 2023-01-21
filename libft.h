@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:24:58 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/21 09:34:23 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/21 10:14:07 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int		ft_strlen(char	*str);
 size_t	strlcat(char *dest, const char *src, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 void	bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
