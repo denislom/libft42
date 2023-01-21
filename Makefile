@@ -10,6 +10,7 @@ SOURCE	=	ft_isalnum.c\
 			ft_strlen.c\
 			ft_bzero.c\
 			ft_memcpy.c\
+			ft_memmove.c\
 
 OBJECTS	=	$(SOURCE:.c=.o)
 
