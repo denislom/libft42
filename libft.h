@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:24:58 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/22 22:56:38 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/22 23:07:21 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 int		ft_toupper(int c);
 int	ft_tolower(int c);
 char	*ft_strchr(const char *str, int c);
+char	*strrchr(const char *str, int c);
 
 #endif

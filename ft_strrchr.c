@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 22:47:14 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/22 22:47:14 by dlom             ###   ########.fr       */
+/*   Created: 2023/01/22 22:58:42 by dlom              #+#    #+#             */
+/*   Updated: 2023/01/22 22:58:42 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+#include "libft.h"
+
+char	*strrchr(const char *str, int c)
 {
 	int	i;
 
@@ -19,8 +21,9 @@ char	*ft_strchr(const char *str, int c)
 	{
 		if (str[i] == c)
 		{
-			return (char *)str;
+			return (char *(str + i));
 		}
 		i++;
 	}
+	return (0);
 }
