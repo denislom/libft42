@@ -19,8 +19,9 @@ char	*ft_strchr(const char *str, int c)
 	{
 		if (str[i] == c)
 		{
-			return (char *)str;
+			return ((char *)str);
 		}
 		i++;
 	}
+	return ((char *)str);
 }
