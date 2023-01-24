@@ -16,6 +16,7 @@ SOURCE	=	ft_isalnum.c\
 			ft_tolower.c\
 			ft_strchr.c\
 			ft_strrchr.c\
+			ft_strncmp.c\
 
 OBJECTS	=	$(SOURCE:.c=.o)
 
