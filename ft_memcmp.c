@@ -12,13 +12,15 @@
 
 #include "libft.h"
 
-//returns a negative vallue if the first vlock is lexicographically less than second
-//returns 0 if two memory blocks are equal
-//returns a positive value if the first memory block is grater than second
+/*returns a negative vallue if the first vlock is
+lexicographically less than second
+returns 0 if two memory blocks are equal
+returns a positive value if the first memory 
+block is grater than second*/
 int	ft_memcmp(const void *ptr1, const void *ptr2, size_t n)
 {
-	unsigned char*	p1;
-	unsigned char*	p2;
+	unsigned char	*p1;
+	unsigned char	*p2;
 	size_t			i;
 
 	p1 = (unsigned char *)ptr1;
@@ -27,7 +29,7 @@ int	ft_memcmp(const void *ptr1, const void *ptr2, size_t n)
 	while (n--)
 	{
 		if (p1[i] != p2[i])
-			return *p1 - *p2;
+			return (*p1 - *p2);
 		i++;
 	}
 	return (0);
