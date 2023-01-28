@@ -11,19 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+RETURNs a pointer to the last occurence of a specific character in the string.
+if not found, return NULL
+*/
 char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = ft_strlen((char *)str);
+	while (i >= 0)
 	{
 		if (str[i] == c)
 		{
 			return ((char *)(str + i));
 		}
-		i++;
+		i--;
 	}
 	return (0);
 }
