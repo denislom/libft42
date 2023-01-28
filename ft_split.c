@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 20:06:18 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/28 20:16:04 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/29 00:14:20 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@ of strings obtained by splitting ’s’ using the
 character ’c’ as a delimiter. The array must end
 with a NULL pointer.
 */
+
+int	count_words(char const *s, char c)
+{
+	int	count;
+	int	in_word;
+
+	count = 0;
+	in_word = 0;
+	while (*s)
+	{
+		if (*s == c)
+	}
+}
 char **ft_split(char const *s, char c)
 {
 
