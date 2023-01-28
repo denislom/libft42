@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:24:58 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/28 09:58:29 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/28 10:11:30 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int		ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 char	*ft_strnstr(const char *str, const char *substr, size_t len);
 int		ft_atoi(char *str);
 char	*ft_strdup(char *src);
+void	*calloc(size_t nmemb, size_t size);
 
 #endif
