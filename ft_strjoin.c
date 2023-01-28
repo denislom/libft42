@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 12:59:57 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/28 13:23:31 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/28 13:59:21 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len1;
 	int		len2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	str = malloc(sizeof(char) * (len1 + len2) + 1);
+	str = (char *)malloc(sizeof(char) * (len1 + len2) + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (i < len1)
+	while (s1[i])
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	while (i < (len1 + len2))
+	while (s2[i - len1])
 	{
-		str[i] = s2[i];
+		str[i] = s2[i - len1];
 		i++;
 	}
 	str[i] = '\0';
