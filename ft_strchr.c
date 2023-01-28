@@ -10,18 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+#include "libft.h"
+/*
+locates the first occurence of a specific character in a strig
+takes two argument: the string to search in and the character to search for
+RETURNS a pointer to the first occurence of the character or NULL if
+the character is not found.
+*/
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	while (*s != (char)c)
 	{
-		if (str[i] == c)
-		{
-			return ((char *)str);
-		}
-		i++;
+		if (!*s)
+			return (0);
+		s++;
 	}
-	return ((char *)str);
+	return ((char *)s);
 }

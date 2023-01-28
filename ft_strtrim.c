@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 17:04:12 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/28 17:58:30 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/28 18:13:40 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		len;
 
+	len = ft_strlen(s1);
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	start = 0;
