@@ -20,6 +20,7 @@ SOURCE	=	ft_isalnum.c\
 			ft_memchr.c\
 			ft_memcmp.c\
 			ft_strnstr.c\
+			ft_atoi.c\
 
 OBJECTS	=	$(SOURCE:.c=.o)
 
