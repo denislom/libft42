@@ -11,12 +11,18 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+Copies a source string do the destination buffer with a maximum
+number of characters that can be copied.
+RETURNS the number of characters in the source string.
+*/
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	srcsize;
 
 	i = 0;
+	srcsize = ft_strlen(src);
 	if (size != 0)
 	{
 		while ((src[i] != '\0') && (i < size - 1))
@@ -26,7 +32,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		}
 		dest[i] = '\0';
 	}
-	return (ft_strlen(dest));
+	return (srcsize);
 }
 
 // size_t	ft_strlcpy(char *dst, const char *src, size_t size)
