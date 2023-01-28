@@ -16,18 +16,27 @@
 //the function iterates over all possible up to the specified maximum length
 char	*ft_strnstr(const char *str, const char *substr, size_t len)
 {
-	size_t	substr_len;
+	size_t	i;
+	size_t	j;
 
-	substr_len = ft_strlen(substr);
-	if (!*substr && len == 0)
+	if (!str && len == 0)
 		return (0);
 	if (substr[0] == '\0')
 		return ((char *)str);
-	while (len > substr_len)
+	i = 0;
+	while (str[i] != '\0' && i < len)
 	{
-		len--;
-		if (!ft_memcmp(str, substr, len))
-			return ((char *)str);
+		j = 0;
+		while (str[i + j] != '\0' && str[i + j] == substr [j]
+			&& i + j < len)
+		{
+			if (substr[j + 1] == '\0')
+			{
+				return ((char *)str + i);
+			}
+			j++;
+		}
+		i++;
 	}
 	return (0);
 }
