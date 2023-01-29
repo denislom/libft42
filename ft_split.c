@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 20:06:18 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/29 15:45:14 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/29 16:08:49 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,43 +37,46 @@ At the end we assign NULL pointer to last index of the result array.
 
 And we free the allocated memory to avoid memory leaks.
 */
-int	ft_count_words(char const *s, char c)
+
+static int	ft_count_words(char const *s, char c)
 {
-	int	word;
+	int	wordcount;
 	int	i;
 
-	word = 0;
+	wordcount = 0;
 	i = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] == c)
-			word++;
+		if (s[i])
+			wordcount++;
 		while (s[i] && s[i] != c)
 			i++;
 	}
-	return (word);
+	return (wordcount);
 }
 
-int	ft_word_size(char const *s, char c)
+static int	ft_word_size(char const *s, char c)
 {
 	int	size;
 
 	size = 0;
-	while (s[size] && s[size != c])
+	while (s[size] != c && s[size])
+	{
 		size++;
+	}
 	return (size);
 }
 
-void	ft_free(char **strs, int j)
+static void	ft_free(char **strs, int j)
 {
 	while (j-- > 0)
 		free(strs[j]);
 	free(strs);
 }
 
-char	**ft_fill(char **new, const char *str, char c, int count)
+static char	**ft_fill(char **new, const char *str, char c, int count)
 {
 	int	words;
 	int	len;
