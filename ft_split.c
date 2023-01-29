@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 20:06:18 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/29 00:14:20 by dlom             ###   ########.fr       */
+/*   Updated: 2023/01/29 15:45:14 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,91 @@ character ’c’ as a delimiter. The array must end
 with a NULL pointer.
 */
 
-int	count_words(char const *s, char c)
-{
-	int	count;
-	int	in_word;
+/*
+First we count the number of words in s
+Then we allocate memory for an array of strings
+to hold the resulting split words
 
-	count = 0;
-	in_word = 0;
-	while (*s)
+Then we iterate through the s, copy each character (except of c),
+we add a null character (\0) at the of each word
+
+At the end we assign NULL pointer to last index of the result array.
+
+And we free the allocated memory to avoid memory leaks.
+*/
+int	ft_count_words(char const *s, char c)
+{
+	int	word;
+	int	i;
+
+	word = 0;
+	i = 0;
+	while (s[i])
 	{
-		if (*s == c)
+		while (s[i] == c)
+			i++;
+		if (s[i] == c)
+			word++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
+	return (word);
 }
-char **ft_split(char const *s, char c)
-{
 
+int	ft_word_size(char const *s, char c)
+{
+	int	size;
+
+	size = 0;
+	while (s[size] && s[size != c])
+		size++;
+	return (size);
+}
+
+void	ft_free(char **strs, int j)
+{
+	while (j-- > 0)
+		free(strs[j]);
+	free(strs);
+}
+
+char	**ft_fill(char **new, const char *str, char c, int count)
+{
+	int	words;
+	int	len;
+	int	i;
+
+	i = 0;
+	words = 0;
+	while (words < count)
+	{
+		while (str[i] == c)
+			i++;
+		len = ft_word_size(&str[i], c);
+		new[words] = ft_substr(str, i, len);
+		if (!new[words])
+		{
+			ft_free(new, words);
+			return (NULL);
+		}
+		while (str[i] && str[i] != c)
+			i++;
+		words++;
+	}
+	new[words] = NULL;
+	return (new);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**new;
+
+	if (!s)
+		return (NULL);
+	count = ft_count_words(s, c);
+	new = malloc((count + 1) * sizeof(char **));
+	if (!new)
+		return (NULL);
+	return (ft_fill(new, s, c, count));
 }
