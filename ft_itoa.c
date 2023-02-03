@@ -33,9 +33,9 @@ int	ft_n_len(int num)
 	if (num < 0)
 	{
 		length++;
-		num= num * (-1);
+		num = num * (-1);
 	}
-	while(num > 0)
+	while (num > 0)
 	{
 		length++;
 		num = num / 10;
