@@ -36,7 +36,9 @@ SOURCE	=	ft_isalnum.c\
 			ft_putnbr_fd.c\
 
 OBJECTS	=	$(SOURCE:.c=.o)
+BONUS	=	ft_lstnew.c\
 
+OBJSB	=	$(BONUS:.c=.o)
 LIBC	=	ar rc
 CC		=	gcc
 RM		=	rm -f
@@ -48,6 +50,9 @@ $(NAME): $(OBJECTS)
 
 all: $(NAME)
 
+bonus: ${OBJS} ${OBJSB}
+	${LIBC} ${NAME} ${OBJS} ${OBJSB}
+
 clean: 
 	$(RM) $(OBJECTS)
 
@@ -56,4 +61,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
