@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:07:49 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/28 10:12:58 by dlom             ###   ########.fr       */
+/*   Updated: 2023/02/04 16:33:26 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 	size_t	total_size;
 
+	if ((nmemb * size) < nmemb || (nmemb * size) < size)
+		return (NULL);
 	total_size = nmemb * size;
 	ptr = malloc(total_size);
 	if (ptr == NULL)
