@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 12:20:48 by dlom              #+#    #+#             */
-/*   Updated: 2023/01/28 12:54:25 by dlom             ###   ########.fr       */
+/*   Updated: 2023/02/05 13:36:36 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,29 @@ maximum size ’len’.
 */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*substr;
+	char				*sub;
+	unsigned int		i;
 
-	i = 0;
-	substr = malloc((len * sizeof(char)) + 1);
 	if ((size_t)start + len > (size_t)ft_strlen(s))
-		len = (size_t)ft_strlen(s) - (size_t)start;
-	else if (len > 0)
+		len = ft_strlen(s) - (size_t)start;
+	if ((size_t)start >= (size_t)ft_strlen(s))
 	{
-		while (len--)
-		{
-			substr[i] = s[i + start];
-			i++;
-		}
+		sub = malloc(sizeof(char));
+		if (!sub)
+			return (NULL);
+		sub[0] = 0;
+		return (sub);
 	}
-	substr[i] = '\0';
-	return (substr);
+	sub = malloc(sizeof(char) * len + 1);
+	if (!sub)
+		return (NULL);
+	i = 0;
+	while (s[start] != '\0' && i < (unsigned int) len)
+	{
+		sub[i] = s[start];
+		start++;
+		i++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }
