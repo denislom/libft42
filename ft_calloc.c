@@ -6,23 +6,30 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:07:49 by dlom              #+#    #+#             */
-/*   Updated: 2023/02/04 16:33:26 by dlom             ###   ########.fr       */
+/*   Updated: 2023/02/05 20:37:41 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
-{
+/*
+SIZE_MAX: a macro constant from header limits.h. Represents the maximum value
+of the size_t.
+size_t: used to express size of an object as a number of bytes
+	(generally equivalent to unsigned int)
+*/
+void	*ft_calloc(size_t nmemb, size_t size) {
 	void	*ptr;
 	size_t	total_size;
 
-	if ((nmemb * size) < nmemb || (nmemb * size) < size)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 	total_size = nmemb * size;
+	if (nmemb > SIZE_MAX / size)
+		return (NULL);
 	ptr = malloc(total_size);
 	if (ptr == NULL)
-		return (0);
+		return (NULL);
 	ft_memset(ptr, 0, total_size);
 	return (ptr);
 }
