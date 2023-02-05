@@ -35,6 +35,7 @@ SOURCE	=	ft_isalnum.c\
 			ft_putendl_fd.c\
 			ft_putnbr_fd.c\
 			ft_lstadd_front.c\
+			int	ft_lstsize.c\
 
 OBJECTS	=	$(SOURCE:.c=.o)
 BONUS	=	ft_lstnew.c\
