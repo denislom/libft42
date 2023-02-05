@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:07:49 by dlom              #+#    #+#             */
-/*   Updated: 2023/02/05 20:44:55 by dlom             ###   ########.fr       */
+/*   Updated: 2023/02/05 20:48:12 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ void	*ft_calloc(size_t nmemb, size_t size) {
 // 	ptr = malloc(nmemb * size);
 // 	if (!ptr)
 // 		return (NULL);
-// 	ft_bzero (ptr, total_size);
+// 	ft_memset(ptr, 0, total_size);
 // 	return (ptr);
 // }
