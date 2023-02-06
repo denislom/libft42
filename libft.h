@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:24:58 by dlom              #+#    #+#             */
-/*   Updated: 2023/02/05 20:15:17 by dlom             ###   ########.fr       */
+/*   Updated: 2023/02/06 17:33:45 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
-# include <limits.h>
 
 typedef struct s_list
 {
